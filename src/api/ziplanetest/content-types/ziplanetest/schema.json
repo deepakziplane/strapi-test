@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ziplanetests",
+  "info": {
+    "singularName": "ziplanetest",
+    "pluralName": "ziplanetests",
+    "displayName": "Ziplanetest"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ZLRX": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "blocks"
+    }
+  }
+}
