@@ -368,13 +368,15 @@ export interface ApiZiplanetestZiplanetest extends Schema.CollectionType {
     singularName: 'ziplanetest';
     pluralName: 'ziplanetests';
     displayName: 'Ziplanetest';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    ZLRX: Attribute.String & Attribute.Required & Attribute.Unique;
+    Title: Attribute.String & Attribute.Required & Attribute.Unique;
     Description: Attribute.Blocks;
+    Version: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
