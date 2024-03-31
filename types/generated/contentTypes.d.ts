@@ -362,39 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiZiplanetestZiplanetest extends Schema.CollectionType {
-  collectionName: 'ziplanetests';
-  info: {
-    singularName: 'ziplanetest';
-    pluralName: 'ziplanetests';
-    displayName: 'Ziplanetest';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required & Attribute.Unique;
-    Description: Attribute.Blocks;
-    Version: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::ziplanetest.ziplanetest',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::ziplanetest.ziplanetest',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -821,6 +788,70 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiZiplaneimageZiplaneimage extends Schema.CollectionType {
+  collectionName: 'ziplaneimages';
+  info: {
+    singularName: 'ziplaneimage';
+    pluralName: 'ziplaneimages';
+    displayName: 'Ziplaneimages';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    image_url: Attribute.UID;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ziplaneimage.ziplaneimage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ziplaneimage.ziplaneimage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiZiplanetestZiplanetest extends Schema.CollectionType {
+  collectionName: 'ziplanetests';
+  info: {
+    singularName: 'ziplanetest';
+    pluralName: 'ziplanetests';
+    displayName: 'Ziplanetest';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required & Attribute.Unique;
+    Description: Attribute.Blocks;
+    Version: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ziplanetest.ziplanetest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ziplanetest.ziplanetest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -831,7 +862,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::ziplanetest.ziplanetest': ApiZiplanetestZiplanetest;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -840,6 +870,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::ziplaneimage.ziplaneimage': ApiZiplaneimageZiplaneimage;
+      'api::ziplanetest.ziplanetest': ApiZiplanetestZiplanetest;
     }
   }
 }

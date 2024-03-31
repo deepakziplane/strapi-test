@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ziplaneimages",
+  "info": {
+    "singularName": "ziplaneimage",
+    "pluralName": "ziplaneimages",
+    "displayName": "Ziplaneimages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "image_url": {
+      "type": "uid"
+    }
+  }
+}
