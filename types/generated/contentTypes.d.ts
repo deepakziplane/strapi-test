@@ -794,12 +794,13 @@ export interface ApiZiplaneimageZiplaneimage extends Schema.CollectionType {
     singularName: 'ziplaneimage';
     pluralName: 'ziplaneimages';
     displayName: 'Ziplaneimages';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     image_url: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
